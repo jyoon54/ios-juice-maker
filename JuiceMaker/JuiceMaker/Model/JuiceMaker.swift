@@ -21,10 +21,6 @@ enum Recipe {
 struct JuiceMaker {
     var fruitStore: FruitStore
     
-    init(fruitStore: FruitStore) {
-        self.fruitStore = fruitStore
-    }
-    
     func makeJuice(recipe: Recipe) {
         switch recipe {
         case .strawberryJuice(let strawberryNeeded):
@@ -77,6 +73,9 @@ struct JuiceMaker {
     }
 }
 
+extension JuiceMaker {
+
+}
 
 
 

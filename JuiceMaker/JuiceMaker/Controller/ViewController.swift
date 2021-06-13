@@ -12,7 +12,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    
+	@IBAction func tabCloseButton(){
+		self.dismiss(animated: true, completion: nil)
+	}
 	
 }
 

@@ -8,18 +8,18 @@ import Foundation
 
 enum Fruit: Int, CaseIterable {
     case strawberry = 0
-	case banana = 1
-	case kiwi = 2
+    case banana = 1
+    case kiwi = 2
     case pineapple = 3
-	case mango = 4
+    case mango = 4
 }
-	
+
 class FruitStore {
     
-	static let shared = FruitStore()
-	
+    static let shared = FruitStore()
+    
     private(set) var fruitStocks = [Fruit: UInt]()
-	
+    
     private init(defaultStock: UInt = 10) {
         for fruit in Fruit.allCases {
             fruitStocks.updateValue(defaultStock, forKey: fruit)
@@ -35,7 +35,7 @@ extension FruitStore {
         guard let quantity = fruitStocks[fruit] else {
             return
         }
-        fruitStocks[fruit] = quantity + numbe
+        fruitStocks[fruit] = quantity + number
     }
     
     func consume(fruit: Fruit, number: UInt) {
@@ -44,7 +44,7 @@ extension FruitStore {
         }
         fruitStocks[fruit] = stock - number
     }
-
+    
     func hasEnoughFruitsStock(fruit: Fruit, number: UInt) -> Bool {
         guard let fruitStocks = fruitStocks[fruit] else { return false }
         return  fruitStocks >= number

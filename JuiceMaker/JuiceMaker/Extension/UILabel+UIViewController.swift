@@ -19,7 +19,7 @@ extension UIViewController {
     
     func refreshStockLabel(fruitLabels: [UILabel]) {
         let stocks = FruitStore.shared.fruitStocks
-    
+        
         for fruitLabel in fruitLabels {
             if let fruit = Fruit(rawValue: fruitLabel.tag), let quantity = stocks[fruit] {
                 fruitLabel.text = "\(quantity)"
